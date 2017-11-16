@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdministrardorMaster.master.cs" Inherits="Administrador_AdministrardorMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <br />
+    <form id="form1" runat="server" class="container">
+        <nav class="navbar navbar-inverse">
+                <div class="container" style="padding-right: 30px;">
+                    <div class="navbar-header">
+                        <button type="button" 
+                            class="navbar-toggle collapsed" 
+                            data-toggle="collapse"
+                            data-target="#navbar" 
+                            aria-expanded="false" 
+                            aria-controls="navbar">
+
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <asp:HyperLink runat="server" 
+                            CssClass="navbar-brand" 
+                            style="padding-right: 80px;"
+                            NavigateUrl="~/BOOKFREE.aspx">BOOK FREE
+                        </asp:HyperLink>
+                    </div>
+
+                    <div id="navbar" class="collapse navbar-collapse">
+                        
+                        <ul class="nav navbar-nav">
+                            <li id="menuUsuarios" runat="server">
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/Administrador/UsuarioLista.aspx"
+                                    Text="Usuarios">
+                                </asp:HyperLink>
+                            </li>
+
+                             <li id="menuAdministradores" runat="server">                           
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/Administrador/AdminLista.aspx"
+                                    Text="Administradores">
+                                </asp:HyperLink>
+                            </li>
+
+                            <%--<li id="menuAutores" runat="server">                           
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/BOOKFREE.aspx"
+                                    Text="Autores">
+                                </asp:HyperLink>
+                            </li>
+                           
+                            <li id="menuEditoriales" runat="server">                           
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/BOOKFREE.aspx"
+                                    Text="Editoriales">
+                                </asp:HyperLink>
+                            </li>
+
+                            <li id="menuLibros" runat="server">                           
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/Libros/LibrosLista.aspx"
+                                    Text="Libros">
+                                </asp:HyperLink>
+                            </li>--%>
+                            <%--OnClick="LogoutButton_Click"--%>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                                <li> 
+                                    <asp:LinkButton  ID="LogoutButton" runat="server" Text="Cerrar Seccion"  ></asp:LinkButton>
+                                </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </nav>
+
+
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
