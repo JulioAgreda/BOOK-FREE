@@ -29,7 +29,7 @@
                         <asp:HyperLink runat="server" 
                             CssClass="navbar-brand" 
                             style="padding-right: 80px;"
-                            NavigateUrl="~/BOOKFREE.aspx">BOOK FREE
+                            NavigateUrl="~/Inicio.aspx">BOOK FREE
                         </asp:HyperLink>
                     </div>
 
@@ -50,7 +50,14 @@
                                 </asp:HyperLink>
                             </li>
 
-                            <%--<li id="menuAutores" runat="server">                           
+                            <li id="menuLibros" runat="server">                           
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/Libros/LibrosLista.aspx"
+                                    Text="Libros">
+                                </asp:HyperLink>
+                            </li>>
+
+                             <%--<li id="menuAutores" runat="server">                           
                                 <asp:HyperLink runat="server"
                                     NavigateUrl="~/BOOKFREE.aspx"
                                     Text="Autores">
@@ -62,15 +69,8 @@
                                     NavigateUrl="~/BOOKFREE.aspx"
                                     Text="Editoriales">
                                 </asp:HyperLink>
-                            </li>
-
-                            <li id="menuLibros" runat="server">                           
-                                <asp:HyperLink runat="server"
-                                    NavigateUrl="~/Libros/LibrosLista.aspx"
-                                    Text="Libros">
-                                </asp:HyperLink>
                             </li>--%>
-                            <%--OnClick="LogoutButton_Click"--%>
+
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">

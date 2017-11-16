@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-12">            
             
-            <h1>LISTA DE ADMINISTRADORES</h1>
+            <h1>LISTA DE USUARIOS</h1>
             
             <asp:GridView ID="GridUsuarios" runat="server" 
                 OnRowCommand="GridUsuarios_RowCommand" 
