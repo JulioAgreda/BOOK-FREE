@@ -9,6 +9,24 @@ public partial class Libros_LibrosLista : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["USUARIO"] == null)
+        {
+            Response.Redirect("~/Administrador/AdminLogin.aspx");
+        }
 
+        List<Libros> listLibros = libroBRL.getLibros();
+        GridLibros.DataSource = listLibros;
+        GridLibros.DataBind();
+
+        cargar();
+    }
+    protected void GridLibros_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
+    }
+
+    public void cargar()
+    {
+        
     }
 }

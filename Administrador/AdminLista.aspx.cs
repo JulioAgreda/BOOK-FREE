@@ -9,6 +9,11 @@ public partial class Administrador_AdminLista : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["USUARIO"] == null)
+        {
+            Response.Redirect("~/Administrador/AdminLogin.aspx");
+        }
+
         if (!IsPostBack)
         {
             cargarLista();

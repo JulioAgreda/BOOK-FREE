@@ -39,7 +39,35 @@ public class libroBRL
         return resultado;
 
     }
-    
+
+    public static int insertarlibros(Libros obj)
+    {
+        if (obj == null)
+        {
+            throw new ArgumentException("El objeto a insertar no puede tener un valor nulo");
+        }
+
+        if (string.IsNullOrEmpty(obj.Titulo))
+        {
+            throw new ArgumentException("el Titulo no puede ser nulo ni vacio");
+        }
+
+        if (string.IsNullOrEmpty(obj.Sinopsis))
+        {
+            throw new ArgumentException("La Sinopsis no puede ser nulo ni vacio");
+        }
+       
+        int? libroId = 0;
+        LibrosDSTableAdapters.LibrosTableAdapter adapter = new LibrosDSTableAdapters.LibrosTableAdapter();
+        adapter.Insert(obj.AutorId, obj.CategoriaId, obj.Titulo, obj.Portada, obj.Sinopsis, obj.Valoracion, obj.Estado, ref libroId);
+        
+        if (libroId == null || libroId.Value <= 0)
+        {
+            throw new Exception("La llave primaria no se genero correctamente");
+        }
+
+        return libroId.Value;
+    }
 
     public static void eliminarLibro(int LibroId)
     {

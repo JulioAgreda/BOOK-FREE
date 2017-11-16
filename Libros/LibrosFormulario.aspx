@@ -17,9 +17,9 @@
 
             <div class="form-group" runat="server" visible ="true">
                 <label>Autor:</label>
-                <%--OnDataBound ="ComboListaAutor_DataBound"--%>
+                
                 <asp:DropDownList ID="ComboListaAutor" runat="server" CssClass="form-control"
-                    
+                    OnDataBound ="ComboListaAutor_DataBound"
                     DataValueField="AutorId"
                     DataTextField="NombreCompleto">
                     <asp:ListItem Value="" Text="Seleccione un Autor"></asp:ListItem>
@@ -37,8 +37,9 @@
 
             <div class="form-group" runat="server" visible ="true">
                 <label>Categoria:</label>
-                <%--OnDataBound ="ComboListaCategoria_DataBound"--%>
+                
                 <asp:DropDownList ID="ComboListaCategoria" runat="server" CssClass="form-control"                    
+                    OnDataBound ="ComboListaCategoria_DataBound"
                     DataValueField="CategoriaId"
                     DataTextField="Nombre">
                     <asp:ListItem Value="" Text="Seleccione una Categoria"></asp:ListItem>
@@ -61,8 +62,8 @@
                 <asp:Label ID="lbValFile" runat="server" Text="" ForeColor="Red"></asp:Label> 
                 <br />        
                 <asp:FileUpload ID="btnFile" runat="server" />
-
-                <%--<asp:Button ID="btnUploadImage" runat="server" Text="Cargar Imagen" OnClick="btnUploadImage_Click"/>--%>
+                <br />
+                <asp:Button ID="btnUploadImage" CssClass="center-block" BorderColor="#666699" runat="server" Text="Cargar Imagen" OnClick="btnUploadImage_Click"/>
             </div>
         </div>
                     
@@ -83,13 +84,13 @@
 
             <div>
                 <label>Sinopsis:</label>
-                <asp:textbox id="TextSinopsis" runat="server" TextMode="MultiLine" 
-                    Height="200"  
+                <asp:textbox id="TxtSinopsis" runat="server" TextMode="MultiLine" 
+                    Height="150"  
                     CssClass="form-control" 
                     placeholder="Ingrese su Sinopsis">
                 </asp:textbox>
                 <asp:RequiredFieldValidator runat="server"
-                      ControlToValidate="TextSinopsis"
+                      ControlToValidate="TxtSinopsis"
                       Display="Dynamic"
                       ForeColor="Red"
                       ErrorMessage="Debe ingresar su Sinopsis">
@@ -99,7 +100,7 @@
                 <asp:linkbutton id="btnAgregar"
                     runat="server"
                     OnClick="BtnSave_Click"
-                    CssClass="btn btn-primary"
+                    CssClass="btn btn-primary center-block"
                     Text="REGISTRAR">
                 </asp:linkbutton>
 

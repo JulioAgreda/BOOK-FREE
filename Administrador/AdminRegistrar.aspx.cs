@@ -12,7 +12,7 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
 
         if (Session["USUARIO"] == null)
         {
-            Response.Redirect("~Administrador/AdminLogin.aspx");
+            Response.Redirect("~/Administrador/AdminLogin.aspx");
         }
 
         string strId = Request.Params["Id"];
