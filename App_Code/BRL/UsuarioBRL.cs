@@ -64,7 +64,6 @@ public class UsuarioBRL
         return resultado;
 
     }
-
     public static int insertarUsuario(Usuario obj)
     {
         if (obj == null)
@@ -114,7 +113,6 @@ public class UsuarioBRL
 
         return usuarioId.Value;
     }
-
     public static Usuario getUsuariosById(int usuarioId)
     {
         if (usuarioId <= 0)
@@ -140,7 +138,6 @@ public class UsuarioBRL
         return obj;
 
     }
-
     public static void actualizarUsuario(string nombre, string apellido, int usuarioId)
     {
         if (string.IsNullOrEmpty(nombre))
@@ -161,7 +158,6 @@ public class UsuarioBRL
         UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
         adapter.Update(nombre, apellido, usuarioId);
     }
-
     public static void eliminarUsuario(int usuarioId)
     {
         if (usuarioId <= 0)
@@ -172,7 +168,6 @@ public class UsuarioBRL
         UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
         adapter.Delete(usuarioId, estado);
     }
-
     public static Usuario GetUsuarioByEmail(string userEmail)
     {
         if (string.IsNullOrEmpty(userEmail))
@@ -193,7 +188,26 @@ public class UsuarioBRL
 
         return obj;
     }
+    public static Usuario GetAdminByEmail(string userEmail)
+    {
+        if (string.IsNullOrEmpty(userEmail))
+            throw new ArgumentException("El Email no puede ser nulo ni vacio");
 
+        UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
+        UsuariosDS.UsuarioDataTable table = adapter.GetAdminByEmail(userEmail);
+
+        if (table.Rows.Count == 0)
+        {
+            return null;
+        }
+
+        if (table.Rows.Count == 0)
+            return null;
+
+        Usuario obj = GetUsuarioFromRow(table[0]);
+
+        return obj;
+    }
     private static Usuario GetUsuarioFromRow(UsuariosDS.UsuarioRow row)
     {
         return new Usuario()

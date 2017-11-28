@@ -15,6 +15,11 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
             Response.Redirect("~/Administrador/AdminLogin.aspx");
         }
 
+        if (IsPostBack)
+        {
+            return;
+        }
+
         string strId = Request.Params["Id"];
         if (string.IsNullOrEmpty(strId))
         {
@@ -81,37 +86,36 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
                 int codigoUsuario = Int32.Parse(Id);
                 UsuarioBRL.actualizarUsuario(nombre, apellido, codigoUsuario);
 
-            //Actualizar Permisos
-                //Permiso perm;
-                //for (int i = 0; i < checkPermisos.Items.Count; i++)
-                //{
-                //    if (checkPermisos.Items[i].Selected)
-                //    {
-                //        perm = PermisoBRL.getPermisoByDescription(checkPermisos.Items[i].Text);
-                //        if (!UsuarioPermisoBRL.tienePermiso(obj.UsuarioId, perm.PermisoID))
-                //        {
-                //            //Actualizar
-                //            PermisoUsuario admPerm = new PermisoUsuario()
-                //            {
-                //                UsuarioId = obj.UsuarioId,
-                //                PermisoId = perm.PermisoID
-                //            };
+                //Actualizar Permisos
+                Permiso perm1;
+                Permiso perm2;
+                for (int i = 0; i < checkPermisos.Items.Count; i++)
+                {
+                    if (checkPermisos.Items[i].Selected)
+                    {
+                        perm1 = PermisoBRL.getPermisoByDescription(checkPermisos.Items[i].Text);
+                        if (!UsuarioPermisoBRL.tienePermiso(obj.UsuarioId, perm1.PermisoID))
+                        {
+                            //Agregar
+                            PermisoUsuario admPerm = new PermisoUsuario()
+                            {
+                                UsuarioId = obj.UsuarioId,
+                                PermisoId = perm1.PermisoID
+                            };
+                            UsuarioPermisoBRL.insertUsuarioPermiso(admPerm);
+                        }                        
+                    }
+                    else
+                    {
+                        perm2 = PermisoBRL.getPermisoByDescription(checkPermisos.Items[i].Text);
+                        if (UsuarioPermisoBRL.tienePermiso(obj.UsuarioId, perm2.PermisoID))
+                        {
+                            //Eliminar
+                            UsuarioPermisoBRL.eliminarUsuarioPermisoByUsuarioIdPermisoId(obj.UsuarioId, perm2.PermisoID);
+                        }
+                    }
 
-                //            UsuarioPermisoBRL.insertUsuarioPermiso(admPerm);
-                //        }
-
-                //    }
-                //    else
-                //    {
-                //        perm = PermisoBRL.getPermisoByDescription(checkPermisos.Items[i].Text);
-                //        if (UsuarioPermisoBRL.tienePermiso(obj.UsuarioId, perm.PermisoID))
-                //        {
-                //            //Eliminar
-                //            UsuarioPermisoBRL.eliminarUsuarioPermisoByUsuarioIdPermisoId(obj.UsuarioId, perm.PermisoID);
-                //        }
-                //    }
-
-                //}
+                }
             }
         }
         catch(Exception ex)
@@ -125,7 +129,7 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
 
    public void cargarDatos()
     {
-
+        Titulo.Text = "EDITAR ADMINISTRADOR"; 
         campoCorreo.Visible = false;
         CampoContraseña.Visible = false;
 
@@ -159,6 +163,7 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
 
             txtNombre.Text = obj.Nombre;
             txtApellido.Text = obj.Apellido;
+            UsuarioID.Value = id.ToString();
 
             Permiso perm;
             for (int i = 0; i < checkPermisos.Items.Count; i++)

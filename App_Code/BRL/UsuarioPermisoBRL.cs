@@ -88,13 +88,13 @@ public class UsuarioPermisoBRL
     public static void eliminarUsuarioPermisoByUsuarioIdPermisoId(int usuarioId, int permisoId)
     {
         UsuarioPermisosDSTableAdapters.UsuarioPermisoTableAdapter adapter = new UsuarioPermisosDSTableAdapters.UsuarioPermisoTableAdapter();
-        UsuarioPermisosDS.UsuarioPermisoDataTable table = adapter.GetUsuarioPermisoIdByUsuarioId(usuarioId);
+        UsuarioPermisosDS.UsuarioPermisoDataTable table = adapter.GetIdByUserPerm(usuarioId, permisoId);
 
         var row = table[0];
 
         PermisoUsuario obj = new PermisoUsuario();
 
-        obj.UsuarioPermisoId = row.permisoId;
+        obj.UsuarioPermisoId = row.usuarioPermisoId;
 
         eliminarUsuarioPermisoById(obj.UsuarioPermisoId);
              

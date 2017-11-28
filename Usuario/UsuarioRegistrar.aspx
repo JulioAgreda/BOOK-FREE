@@ -1,16 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador/AdministrardorMaster.master" AutoEventWireup="true" CodeFile="AdminRegistrar.aspx.cs" Inherits="Administrador_AdminRegistrar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/MasterPageUsuario.master" AutoEventWireup="true" CodeFile="UsuarioRegistrar.aspx.cs" Inherits="Usuario_UsuarioRegistrar" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
     <div class="row">
         <div class="col-lg-12">
             
-            <h1>
-                <asp:literal ID="Titulo" runat="server" Text="REGISTRAR ADMINISTRADOR"></asp:literal>
-            </h1>
-            
+            <h1>REGISTRO DE USUARIO</h1>
             <br />
             <br />
             <asp:HiddenField id="UsuarioID" runat="server" value="0"/>
@@ -70,25 +66,7 @@
                         placeholder="Ingrese su Constraseña">
                     </asp:textbox>                                        
                 </div>  
-                <br />
-                <h3 class="checkbox">Asignar Permisos</h3>
-                    
-                <asp:CheckBoxList CssClass="checkbox-inline" ID="checkPermisos" runat="server">
-                    <asp:ListItem>Gestionar Usuarios</asp:ListItem>
-                    <asp:ListItem>Gestionar Autores</asp:ListItem>
-                    <asp:ListItem>Gestionar Editoriales</asp:ListItem>
-                    <asp:ListItem>Gestionar Libros</asp:ListItem>
-                    <asp:ListItem>Gestionar Categorias</asp:ListItem>
-                    <asp:ListItem>Gestionar Permisos</asp:ListItem>
-                    <asp:ListItem>Reportes Descargas</asp:ListItem>
-                    <asp:ListItem>Reportes Lecturas</asp:ListItem>
-                    <asp:ListItem>Reportes Valoracion</asp:ListItem>
-                    <asp:ListItem>Ver Lista Libros</asp:ListItem>
-                    <asp:ListItem>Descargar Libros</asp:ListItem>
-                    <asp:ListItem>Leer Libros</asp:ListItem>
-                    <asp:ListItem>Valorar Libro</asp:ListItem>
-                </asp:CheckBoxList>
-
+                
                 <br />
                 <br />
                 <asp:linkbutton id="btnAgregar"
@@ -101,7 +79,6 @@
             </div>      
         </div>     
     </div>
-
 
 </asp:Content>
 

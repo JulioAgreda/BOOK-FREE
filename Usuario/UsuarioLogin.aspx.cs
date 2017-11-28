@@ -5,22 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Administrador_AdminLogin : System.Web.UI.Page
+public partial class Usuario_UsuarioLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
-    
     }
+
     protected void BtnLogin_Click(object sender, EventArgs e)
     {
         string userEmail = UserEmailTxt.Text;
         string contraseña = PasswordTxt.Text;
-        
+
+
+
         MsgError.Visible = false;
         try
         {
-            Usuario obj = UsuarioBRL.GetAdminByEmail(userEmail);
+            Usuario obj = UsuarioBRL.GetUsuarioByEmail(userEmail);
             if (obj == null)
             {
                 MsgError.Text = "Correo No Valido";
@@ -42,7 +44,6 @@ public partial class Administrador_AdminLogin : System.Web.UI.Page
             MsgError.Visible = true;
             return;
         }
-        Response.Redirect("~/Administrador/AdminLista.aspx");
-
+        Response.Redirect("~/Inicio.aspx");
     }
 }

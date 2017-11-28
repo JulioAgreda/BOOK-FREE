@@ -53,20 +53,7 @@
                 <asp:HyperLink runat="server" NavigateUrl="~/Rol/RegistroRol.aspx">
                    CATEGORIA +
                 </asp:HyperLink>
-            </div>
-            
-            <div class="form-group">
-            <div class="col-md-offset-2">
-                <asp:Image ID="imgLibro" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
-                <br /> 
-                <asp:Label ID="lbValFile" runat="server" Text="" ForeColor="Red"></asp:Label> 
-                <br />        
-                <asp:FileUpload ID="btnFile" runat="server" />
-                <br />
-                <asp:Button ID="btnUploadImage" CssClass="center-block" BorderColor="#666699" runat="server" Text="Cargar Imagen" OnClick="btnUploadImage_Click"/>
-            </div>
-        </div>
-                    
+            </div>                              
 
             <div>
                 <label>Titulo:</label>
@@ -96,6 +83,19 @@
                       ErrorMessage="Debe ingresar su Sinopsis">
                  </asp:RequiredFieldValidator>
             </div>       
+
+            <div class="form-group">
+            <div class="col-md-offset-2">
+                <asp:Image ID="imgLibro" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
+                <br /> 
+                <asp:Label ID="lbValFile" runat="server" Text="" ForeColor="Red"></asp:Label> 
+                <br />        
+                <asp:FileUpload ID="btnFile" runat="server" />
+                <br />
+                <asp:Button ID="btnUploadImage" CssClass="center-block" BorderColor="#666699" runat="server" Text="Cargar Imagen" OnClick="btnUploadImage_Click"/>
+            </div>
+        </div>
+
                 <br />
                 <asp:linkbutton id="btnAgregar"
                     runat="server"
