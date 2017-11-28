@@ -18,13 +18,21 @@ public partial class Libros_LibrosFormulario : System.Web.UI.Page
         {
             return;
         }
-        cargar();
+
+        string strId = Request.Params["Id"];
+        if (string.IsNullOrEmpty(strId))
+        {
+            cargarCombos();
+        }
+        cargarDatos();
+        
     }
 
     protected void BtnSave_Click(object sender, EventArgs e)
     {
         try
         {
+            int id = Convert.ToInt32(LIBROID.Value);
             string valorAutor = ComboListaAutor.SelectedValue;
             int autorId = Convert.ToInt32(valorAutor);
 
@@ -84,7 +92,7 @@ public partial class Libros_LibrosFormulario : System.Web.UI.Page
         }
     }
 
-    public void cargar()
+    public void cargarCombos()
     {
         List<Autores> autores = AutorBRL.getAutor();
         ComboListaAutor.DataSource = autores;
@@ -93,15 +101,51 @@ public partial class Libros_LibrosFormulario : System.Web.UI.Page
         List<Categorias> categoria = CategoriaBRL.getCategoria();
         ComboListaCategoria.DataSource = categoria;
         ComboListaCategoria.DataBind();
+
     }
 
-    protected void ComboListaAutor_DataBound(object sender, EventArgs e)
+    public void cargarDatos()
     {
-        ComboListaAutor.Items.Insert(0, new ListItem("Seleccione un Autor...", ""));
+        try
+        {
+            string strId = Request.Params["Id"];
+            int codLibro = Int32.Parse(strId);
+
+            List<Autores> autor = AutorBRL.getAutorById(codLibro);
+            ComboListaAutor.DataSource = autor;
+            ComboListaAutor.DataBind();
+
+
+            List<Categorias> categoria = CategoriaBRL.getCategoriaById(codLibro);
+            ComboListaCategoria.DataSource = categoria;
+            ComboListaCategoria.DataBind();
+
+            Libros lib = libroBRL.getLibroById(codLibro);
+            txtTitulo.Text = lib.Titulo;
+            TxtSinopsis.Text = lib.Sinopsis;
+
+            lib = libroBRL.getLibroById(codLibro);
+            imgLibro.ImageUrl = lib.Portada;
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+           
+        
+
+
+
     }
 
-    protected void ComboListaCategoria_DataBound(object sender, EventArgs e)
-    {
-        ComboListaCategoria.Items.Insert(0, new ListItem("Seleccione un Categoria...", ""));
-    }
+    //protected void ComboListaAutor_DataBound(object sender, EventArgs e)
+    //{
+    //    ComboListaAutor.Items.Insert(0, new ListItem("Seleccione un Autor...", ""));
+    //}
+
+    //protected void ComboListaCategoria_DataBound(object sender, EventArgs e)
+    //{
+    //    ComboListaCategoria.Items.Insert(0, new ListItem("Seleccione un Categoria...", ""));
+    //}
 }

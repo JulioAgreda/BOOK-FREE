@@ -38,4 +38,29 @@ public class AutorBRL
 
     }
 
+    public static List<Autores> getAutorById(int libroId)
+    {
+        Libros libro =  libroBRL.getLibroById(libroId);
+
+
+        AutorDSTableAdapters.AutorTableAdapter adapter = new AutorDSTableAdapters.AutorTableAdapter();
+        AutorDS.AutorDataTable table = adapter.GetAutorById(libro.AutorId);
+
+        List<Autores> resultado = new List<Autores>();
+
+        foreach (var row in table)
+        {
+            Autores obj = new Autores();
+
+            obj.AutorId = row.autorId;
+            obj.nombreCompleto = row.nombreCompleto;
+            obj.estado = row.estado;
+
+            resultado.Add(obj);
+        }
+
+        return resultado;
+
+    }
+
 }

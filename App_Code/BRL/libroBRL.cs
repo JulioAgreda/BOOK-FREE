@@ -81,5 +81,28 @@ public class libroBRL
         adapter.Delete(LibroId, estado);
     }
 
+    public static Libros getLibroById(int libroId)
+    {
 
+        LibrosDSTableAdapters.LibrosTableAdapter adapter = new LibrosDSTableAdapters.LibrosTableAdapter();
+        LibrosDS.LibrosDataTable table = adapter.GetLibroById(libroId);
+
+        List<Libros> resultado = new List<Libros>();
+
+        var row = table[0];
+
+            Libros obj = new Libros();
+
+            obj.librosId = row.LibroId;
+            obj.AutorId = row.autorId;
+            obj.CategoriaId = row.categoriaId;
+            obj.Titulo = row.titulo;
+            obj.Portada = row.portada;
+            obj.Sinopsis = row.sinopsis;
+            obj.Valoracion = row.valoracion;
+            obj.Estado = row.estado;
+
+        return obj;
+
+    }
 }

@@ -15,20 +15,28 @@
                 CssClass="table"                
                 GridLines="None">
 
-                <Columns>                 
+                <Columns>     
+                                              
+                   <asp:TemplateField HeaderText="Eliminar">
+                       <ItemTemplate>
+                           <asp:LinkButton ID="btnEliminar" runat="server"
+                               CommandName="Eliminar"
+                               OnClientClick="return confirm('Esta seguro que desea eliminar el Libro?')"
+                               CommandArgument='<%# Eval("LibrosId") %>'>
+                               <i class="glyphicon glyphicon-trash"></i>
+                           </asp:LinkButton>                           
+                       </ItemTemplate>
+                   </asp:TemplateField>
 
-
-
-                  <asp:TemplateField HeaderText="Eliminar">
+                   <asp:TemplateField HeaderText="Editar">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnEliminar" runat="server"
-                                CommandName="Eliminar"
-                                OnClientClick="return confirm('Esta seguro que desea eliminar el Libro?')"
+                            <asp:LinkButton ID="EditButton" runat="server"
+                                CommandName="Editar"
                                 CommandArgument='<%# Eval("LibrosId") %>'>
-                                <i class="glyphicon glyphicon-trash"></i>
-                            </asp:LinkButton>                           
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </asp:LinkButton>
                         </ItemTemplate>
-                    </asp:TemplateField>
+                   </asp:TemplateField> 
 
                    <asp:BoundField DataField="librosId" HeaderText="Libro Id" />
                    <asp:BoundField DataField="autorId" HeaderText="Autor" />
@@ -38,16 +46,8 @@
                    <asp:BoundField DataField="sinopsis" HeaderText="Sinapsis" />   
                    <asp:BoundField DataField="valoracion" HeaderText="Valoracion" />    
                 </Columns> 
-             </asp:GridView>
-                    
-                      <%-- <ItemTemplate>
-                                <asp:LinkButton ID="EditButton" runat="server"
-                                    CommandName="Editar"
-                                    CommandArgument='<%# Eval("PeliculaId") %>'>
-                                <i class="glyphicon glyphicon-pencil"></i>
-                                </asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>--%>        
+             </asp:GridView>                   
+                            
         </div>
     </div>
 </asp:Content>
