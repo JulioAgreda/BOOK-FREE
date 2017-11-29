@@ -47,14 +47,14 @@ public partial class Usuario_UsuarioRegistrar : System.Web.UI.Page
             //Insertar Nuevo Usuario
             if (string.IsNullOrEmpty(strId))
             {
-                int userId = UsuarioBRL.insertarUsuario(obj);                                
+                int userId = UsuarioBRL.insertarUsuario(obj);
             }
             //Actualizar Usuario
             else
             {
                 string Id = Request.Params["Id"];
                 int codigoUsuario = Int32.Parse(Id);
-                UsuarioBRL.actualizarUsuario(nombre, apellido, codigoUsuario);                
+                UsuarioBRL.actualizarUsuario(nombre, apellido, codigoUsuario);
             }
         }
         catch (Exception ex)
@@ -101,7 +101,7 @@ public partial class Usuario_UsuarioRegistrar : System.Web.UI.Page
             Usuario obj = UsuarioBRL.getUsuariosById(id);
 
             txtNombre.Text = obj.Nombre;
-            txtApellido.Text = obj.Apellido;            
+            txtApellido.Text = obj.Apellido;
         }
         catch (Exception ex)
         {

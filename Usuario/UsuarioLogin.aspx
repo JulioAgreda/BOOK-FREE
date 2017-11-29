@@ -44,7 +44,7 @@
                 </asp:RequiredFieldValidator>
             </div>
 
-            <asp:HyperLink  runat="server" NavigateUrl="~/Usuario/UsuarioRegistrar.aspx">Registrar Usaurio</asp:HyperLink>
+            <asp:HyperLink  runat="server" NavigateUrl="~/Usuario/UsuarioRegistrar.aspx">Registrar Usuario</asp:HyperLink>
 
             <asp:Label ID="MsgError" runat="server" ForeColor="Red" Visible="false" style="margin-bottom: 10px"></asp:Label>
             
