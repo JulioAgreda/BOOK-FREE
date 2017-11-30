@@ -30,6 +30,7 @@ public partial class Usuario_UsuarioRegistrar : System.Web.UI.Page
             string contraseña = txtContraseña.Text;
             string tipoUsuario = "usuario";
             string estado = "activo";
+            string estadoActual = "off";
 
             Usuario obj = new Usuario()
             {
@@ -39,6 +40,7 @@ public partial class Usuario_UsuarioRegistrar : System.Web.UI.Page
                 Contraseña = contraseña,
                 TipoUsuario = tipoUsuario,
                 Estado = estado,
+                EstadoActual = estadoActual,
                 UsuarioId = id
             };
 

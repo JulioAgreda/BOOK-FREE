@@ -48,7 +48,7 @@
                                 <asp:HyperLink  ID="LogoutButton"
                                     runat="server" 
                                     NavigateUrl="~/Usuario/UsuarioLogin.aspx"
-                                    Text="Cerrar Seccion"  >
+                                    Text="Cerrar Seccion">
                                 </asp:HyperLink>
                             </li>
                         </ul>

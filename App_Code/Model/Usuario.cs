@@ -15,6 +15,8 @@ public class Usuario
     public string Contraseña { get; set; }
     public string TipoUsuario { get; set; }    
     public string Estado { get; set; }
+    public string EstadoActual { get; set; }
+
 
     public Usuario()
     {

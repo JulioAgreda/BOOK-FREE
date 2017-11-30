@@ -9,15 +9,23 @@ public partial class Usuario_UsuarioLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["USUARIO"] = null;
+        try
+        {
+            Usuario user = UsuarioBRL.getUsuariosActivos();
+            UsuarioBRL.actualizarEstadoUsuario("off", user.UsuarioId);
+
+            Session["USUARIO"] = null;
+        }
+        catch (Exception ex)
+        {
+
+        }        
     }
 
     protected void BtnLogin_Click(object sender, EventArgs e)
     {
         string userEmail = UserEmailTxt.Text;
         string contraseña = PasswordTxt.Text;
-
-
 
         MsgError.Visible = false;
         try
@@ -34,9 +42,9 @@ public partial class Usuario_UsuarioLogin : System.Web.UI.Page
                 MsgError.Text = "Constraseña No Valido";
                 MsgError.Visible = true;
                 return;
-            }
-
-            Session["USUARIO"] = obj;
+            }    
+            UsuarioBRL.actualizarEstadoUsuario("on", obj.UsuarioId);
+            Session["USUARIO"] = obj;            
         }
         catch (Exception ex)
         {

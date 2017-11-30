@@ -31,6 +31,7 @@ public class UsuarioBRL
             obj.Email = row.email;
             obj.Contraseña = row.contraseña;
             obj.Estado = row.estado;
+            obj.EstadoActual = row.estadoActual;
             obj.TipoUsuario = row.tipoUsuario;
 
             resultado.Add(obj);
@@ -56,6 +57,7 @@ public class UsuarioBRL
             obj.Email = row.email;
             obj.Contraseña = row.contraseña;
             obj.Estado = row.estado;
+            obj.EstadoActual = row.estadoActual;
             obj.TipoUsuario = row.tipoUsuario;
 
             resultado.Add(obj);
@@ -104,7 +106,7 @@ public class UsuarioBRL
         int? usuarioId = 0;
 
         UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
-        adapter.Insert(obj.Nombre, obj.Apellido, obj.Email, obj.Contraseña, obj.TipoUsuario, obj.Estado, ref usuarioId);
+        adapter.Insert(obj.Nombre, obj.Apellido, obj.Email, obj.Contraseña, obj.TipoUsuario, obj.Estado,obj.EstadoActual, ref usuarioId);
 
         if (usuarioId == null || usuarioId.Value <= 0)
         {
@@ -157,6 +159,22 @@ public class UsuarioBRL
         
         UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
         adapter.Update(nombre, apellido, usuarioId);
+    }
+
+    public static void actualizarEstadoUsuario(string actual, int codUsuario)
+    {
+        if (codUsuario < 0)
+        {
+            throw new ArgumentException("Debe ser mayor a 0");
+        }
+
+        if (string.IsNullOrEmpty(actual))
+        {
+            throw new ArgumentException("El Nombre no puede estar Vacio");
+        }              
+
+        UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
+        adapter.GetUpdateEstadoUsuario(actual, codUsuario);
     }
     public static void eliminarUsuario(int usuarioId)
     {
@@ -221,5 +239,22 @@ public class UsuarioBRL
             TipoUsuario = row.tipoUsuario
     };
     }
+    public static Usuario getUsuariosActivos()
+    {
+        UsuariosDSTableAdapters.UsuarioTableAdapter adapter = new UsuariosDSTableAdapters.UsuarioTableAdapter();
+        UsuariosDS.UsuarioDataTable table = adapter.GetUsuarioActivos();
+
+        Usuario obj = new Usuario();
+
+        var row = table[0];
+
+        obj.UsuarioId = row.usuarioId;
+        obj.Nombre = row.nombre;
+        obj.Apellido = row.apellido;
+
+        return obj;
+
+    }
+
 
 }

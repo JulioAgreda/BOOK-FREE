@@ -5,6 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
             <div style="padding-left:100px">
                 <br />
+                <asp:Label ID="fechaActual" runat="server" Text="Fecha Actual:"></asp:Label>
+                <br />
                 <asp:Image ID="ImgPortada" runat="server" ImageUrl='<%# Eval("Portada")%>' Width="190" Height="300"/><br />
                 <br />
                     <asp:Label runat="server" Text="Titulo:" Font-Bold="true"></asp:Label>

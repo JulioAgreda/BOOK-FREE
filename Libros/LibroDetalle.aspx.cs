@@ -20,6 +20,8 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
             lblValoreLibro.Visible = false;
             valoreLibro.Visible = false;
 
+            
+
             string strId = Request.Params["Id"];
             int codLibro = Int32.Parse(strId);
 
@@ -61,6 +63,14 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
 
         string strId = Request.Params["Id"];
         int codLibro = Int32.Parse(strId);
+        DateTime fec = Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"));
+        Usuario user = UsuarioBRL.getUsuariosActivos();
+        Descarga objDescarga = new Descarga();
+            objDescarga.libroId = codLibro;
+            objDescarga.usuarioId = user.UsuarioId;
+            objDescarga.fecha = fec;
+
+        DescargaBRL.insertarDescarga(objDescarga);
 
         Libros lib = libroBRL.getLibroById(codLibro);
 
@@ -81,9 +91,18 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
         {
             Response.Redirect("~/Usuario/UsuarioLogin.aspx");
         }
-
+        
         string strId = Request.Params["Id"];
         int codLibro = Int32.Parse(strId);
+
+        DateTime fec = Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy"));
+        Usuario user = UsuarioBRL.getUsuariosActivos();
+        Lectura objLectura = new Lectura();
+        objLectura.libroId = codLibro;
+        objLectura.usuarioId = user.UsuarioId;
+        objLectura.fecha = fec;
+
+        LecturaBRL.insertarLectura(objLectura);
 
         Libros lib = libroBRL.getLibroById(codLibro);
 
