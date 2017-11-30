@@ -55,7 +55,7 @@
                                     NavigateUrl="~/Libros/LibrosLista.aspx"
                                     Text="Libros">
                                 </asp:HyperLink>
-                            </li>>
+                            </li>
 
                              <%--<li id="menuAutores" runat="server">                           
                                 <asp:HyperLink runat="server"

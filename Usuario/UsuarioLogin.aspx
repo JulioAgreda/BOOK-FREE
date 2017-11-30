@@ -42,16 +42,16 @@
                     ValidationGroup="Login"
                     Display="Dynamic">
                 </asp:RequiredFieldValidator>
-            </div>
-
-            <asp:HyperLink  runat="server" NavigateUrl="~/Usuario/UsuarioRegistrar.aspx">Registrar Usuario</asp:HyperLink>
-
-            <asp:Label ID="MsgError" runat="server" ForeColor="Red" Visible="false" style="margin-bottom: 10px"></asp:Label>
+            </div>            
+            <asp:Label ID="MsgError" runat="server" ForeColor="Red" Visible="false" style="margin-bottom: 10px"></asp:Label>            
             
             <asp:Button ID="BtnLogin" runat="server"
                 OnClick="BtnLogin_Click"
                 CssClass="btn btn-lg btn-primary btn-block"
                 ValidationGroup="Login" Text="Ingresar" />
+            <br />
+            <asp:HyperLink style="padding-left:80px" runat="server" Font-Size="15px" ForeColor="#ff0000" Font-Bold="true" NavigateUrl="~/Usuario/UsuarioRegistrar.aspx">Registrarse</asp:HyperLink>
+
         </form>
     </div>
 </body></html>

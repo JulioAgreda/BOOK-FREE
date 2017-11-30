@@ -66,8 +66,6 @@
                         placeholder="Ingrese su Constraseña">
                     </asp:TextBox>
                 </div>
-
-                <br />
                 <br />
                 <asp:LinkButton ID="btnAgregar"
                     runat="server"
@@ -75,7 +73,8 @@
                     CssClass="btn btn-primary"
                     Text="REGISTRAR">
                 </asp:LinkButton>
-
+                <br />
+                <br />
             </div>
         </div>
     </div>

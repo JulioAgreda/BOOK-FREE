@@ -26,7 +26,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">BOOK FREE</a>
+        <asp:HyperLink class="navbar-brand" runat="server"
+                    NavigateUrl="~/Index.aspx"
+                    Text="BOOK FREE" Font-Size="30px">
+        </asp:HyperLink>
 
         <div class="navbar-collapse navbar-right" id="navbarResponsive">
           <ul class="navbar-nav ml-auto"> 
@@ -34,37 +37,37 @@
             <li class="menu_Inicio" id="Li5" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Index.aspx"
-                    Text="Inicio">
+                    Text="Inicio" Font-Size="17px">
                 </asp:HyperLink>
             </li>             
             <li class="menu_Busqueda" id="Li1" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Libros/Busquedas.aspx"
-                    Text="Busquedas">
+                    Text="Busquedas" Font-Size="17px">
                 </asp:HyperLink>
             </li> 
             <li class="menu_Recomendados" id="Li2" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Libros/Recomendados.aspx"
-                    Text="Recomendados">
+                    Text="Recomendados" Font-Size="17px">
                 </asp:HyperLink>
             </li> 
             <li class="menu_Registrar" id="Li3" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Usuario/UsuarioRegistrar.aspx"
-                    Text="Registrarse">
+                    Text="Registrarse" Font-Size="17px">
                 </asp:HyperLink>
             </li>              
             <li class="menu_Perfil" id="Li4" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Usuario/Perfil.aspx"
-                    Text="Perfil">
+                    Text="Perfil" Font-Size="17px">
                 </asp:HyperLink>
             </li>     
             <li class="menu_IniciarSeccion" id="Li6" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Usuario/UsuarioLogin.aspx"
-                    Text="Iniciar Seccion">
+                    Text="Iniciar Seccion" Font-Size="17px">
                 </asp:HyperLink>
             </li>  
           </ul>
@@ -76,9 +79,12 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Lea donde sea. Cuando quiera.
-        <small>Descubra las mejores lecturas en varios temas de interés</small>
+      <h1 class="my-4">
+          Lea donde sea y cuando quiera.        
       </h1>
+      <small class="h4">Descubra las mejores lecturas en varios temas de interés</small>
+
+    
       
      <form id="form1" runat="server" class="container">     
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
@@ -119,7 +125,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Book Free 2017-2018</p>
       </div>
       <!-- /.container -->
     </footer>
