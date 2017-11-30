@@ -131,11 +131,7 @@ public partial class Libros_LibrosFormulario : System.Web.UI.Page
         catch (Exception ex)
         {
 
-        }
-           
-        
-
-
+        }         
 
     }
 

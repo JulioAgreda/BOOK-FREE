@@ -60,7 +60,24 @@ public class AutorBRL
         }
 
         return resultado;
-
     }
 
+    public static Autores getAutorNombreById(int libroId)
+    {
+        Libros libro = libroBRL.getLibroById(libroId);
+
+
+        AutorDSTableAdapters.AutorTableAdapter adapter = new AutorDSTableAdapters.AutorTableAdapter();
+        AutorDS.AutorDataTable table = adapter.GetAutorById(libro.AutorId);
+
+        var row = table[0];
+
+        Autores obj = new Autores();
+
+        obj.AutorId = row.autorId;
+        obj.nombreCompleto = row.nombreCompleto;
+        obj.estado = row.estado;
+        
+        return obj;
+    }
 }

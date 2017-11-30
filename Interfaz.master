@@ -64,12 +64,21 @@
                     Text="Perfil" Font-Size="17px">
                 </asp:HyperLink>
             </li>     
-            <li class="menu_IniciarSeccion" id="Li6" runat="server">
+            <li class="menu_IniciarSeccion" style="padding-left:100px" id="Li6" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
                     NavigateUrl="~/Usuario/UsuarioLogin.aspx"
                     Text="Iniciar Seccion" Font-Size="17px">
                 </asp:HyperLink>
             </li>  
+            
+            <li class="menu_IniciarSeccion" id="menuSalir" runat="server">   
+                <asp:HyperLink class="nav-link" ID="LogoutButton"
+                    runat="server" 
+                    NavigateUrl="~/Usuario/UsuarioLogin.aspx"
+                    Text="Cerrar Seccion" Font-Size="17px">
+                </asp:HyperLink>
+           </li>
+
           </ul>
         </div>
       </div>

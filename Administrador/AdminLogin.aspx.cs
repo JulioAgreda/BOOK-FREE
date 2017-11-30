@@ -9,9 +9,9 @@ public partial class Administrador_AdminLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-    
+        Session["USUARIO"] = null;
     }
+
     protected void BtnLogin_Click(object sender, EventArgs e)
     {
         string userEmail = UserEmailTxt.Text;

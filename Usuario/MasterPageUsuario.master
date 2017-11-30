@@ -42,29 +42,18 @@
                                     NavigateUrl="~/Libros/LibrosLista.aspx"
                                     Text="Libros">
                                 </asp:HyperLink>
-                            </li>>
-
-                             <%--<li id="menuAutores" runat="server">                           
-                                <asp:HyperLink runat="server"
-                                    NavigateUrl="~/BOOKFREE.aspx"
-                                    Text="Autores">
+                            </li>   
+                                                    
+                            <li style="padding-left:500px" id="menuSalir" runat="server">   
+                                <asp:HyperLink  ID="LogoutButton"
+                                    runat="server" 
+                                    NavigateUrl="~/Usuario/UsuarioLogin.aspx"
+                                    Text="Cerrar Seccion"  >
                                 </asp:HyperLink>
                             </li>
-                           
-                            <li id="menuEditoriales" runat="server">                           
-                                <asp:HyperLink runat="server"
-                                    NavigateUrl="~/BOOKFREE.aspx"
-                                    Text="Editoriales">
-                                </asp:HyperLink>
-                            </li>--%>
-
                         </ul>
 
-                        <ul class="nav navbar-nav navbar-right">
-                                <li> 
-                                    <asp:LinkButton  ID="LogoutButton" runat="server" Text="Cerrar Seccion"  ></asp:LinkButton>
-                                </li>
-                        </ul>
+                        
                     </div>
                     <!--/.nav-collapse -->
                 </div>

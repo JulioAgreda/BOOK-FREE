@@ -9,7 +9,7 @@ public partial class Usuario_UsuarioLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Session["USUARIO"] = null;
     }
 
     protected void BtnLogin_Click(object sender, EventArgs e)
@@ -44,6 +44,6 @@ public partial class Usuario_UsuarioLogin : System.Web.UI.Page
             MsgError.Visible = true;
             return;
         }
-        Response.Redirect("~/Inicio.aspx");
+        Response.Redirect("~/Usuario/Perfil.aspx");
     }
 }

@@ -62,7 +62,7 @@ public partial class Usuario_UsuarioRegistrar : System.Web.UI.Page
             panelError.Visible = true;
             return;
         }
-        Response.Redirect("~/Libros/LibrosLista.aspx");
+        Response.Redirect("~/Index.aspx");
 
     }
 

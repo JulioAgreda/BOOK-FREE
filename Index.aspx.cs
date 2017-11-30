@@ -39,7 +39,7 @@ public partial class Index : System.Web.UI.Page
 
         if (e.CommandName == "verLibro")
         {
-            //Response.Redirect("~/JoyanaUSER/DetallePelicula.aspx?Id=" + peliculaId.ToString());
+            Response.Redirect("~/Libros/LibroDetalle.aspx?Id=" + libroId.ToString());
             return;
         }
     }

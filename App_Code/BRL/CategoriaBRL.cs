@@ -58,4 +58,23 @@ public class CategoriaBRL
         return resultado;
 
     }
+
+    public static Categorias getCategoriaNombreById(int libroId)
+    {
+        Libros libro = libroBRL.getLibroById(libroId);
+
+        CategoriaDSTableAdapters.CategoriaTableAdapter adapter = new CategoriaDSTableAdapters.CategoriaTableAdapter();
+        CategoriaDS.CategoriaDataTable table = adapter.GetCategoriaById(libro.CategoriaId);
+        
+        var row = table[0];
+
+            Categorias obj = new Categorias();
+
+            obj.CategoriaId = row.categoriaID;
+            obj.Nombre = row.nombre;
+            obj.Descripcion = row.descripcion;
+            obj.Estado = row.estado;
+
+        return obj;
+    }
 }

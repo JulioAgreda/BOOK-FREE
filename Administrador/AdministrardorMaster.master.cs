@@ -9,7 +9,10 @@ public partial class Administrador_AdministrardorMaster : System.Web.UI.MasterPa
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["USUARIO"] == null)
+        {
+            Response.Redirect("~/Administrador/AdminLogin.aspx");
+        }
     }
 
 
