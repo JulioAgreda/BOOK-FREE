@@ -14,10 +14,12 @@ public partial class Administrador_AdminLista : System.Web.UI.Page
             Response.Redirect("~/Administrador/AdminLogin.aspx");
         }
 
-        if (!IsPostBack)
-        {
-            cargarLista();
-        }
+        cargarLista();
+
+        //if (!IsPostBack)
+        //{
+        //    cargarLista();
+        //}
     }
 
     private void cargarLista()

@@ -42,6 +42,7 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
             string contraseña = txtContraseña.Text;
             string tipoUsuario = "admin";
             string estado = "activo";
+            string estadoActual = "off";
 
             Usuario obj = new Usuario()
             {
@@ -51,7 +52,9 @@ public partial class Administrador_AdminRegistrar : System.Web.UI.Page
                 Contraseña = contraseña,
                 TipoUsuario = tipoUsuario,
                 Estado = estado,
+                EstadoActual = estadoActual,
                 UsuarioId = id
+                
             };
 
             string strId = Request.Params["Id"];

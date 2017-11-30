@@ -105,4 +105,23 @@ public class libroBRL
         return obj;
 
     }
+
+    public static List<Libros> getLibrosMasDescargados()
+    {
+        LibrosDSTableAdapters.LibrosTableAdapter adapter = new LibrosDSTableAdapters.LibrosTableAdapter();
+        LibrosDS.LibrosDataTable table = adapter.GetLibros();     
+
+        List<Libros> resultado = new List<Libros>();
+
+        foreach (var row in table)
+        {
+            Libros obj = new Libros();
+
+            libroBRL.getLibroById(obj.librosId);            
+
+            resultado.Add(obj);
+        }
+        return resultado;
+
+    }
 }

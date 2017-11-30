@@ -5,12 +5,14 @@ INSERT INTO .[dbo].[tblUsuario]
            ,[email]
            ,[contraseña]
            ,[tipoUsuario]
-           ,[estado])
+           ,[estado]
+           ,[estadoActual])
      VALUES
            ('nombre'
            ,'apellido'
            ,'admin@gmail.com'
            ,'4dm1n'
            ,'admin'
-           ,'activo')
+           ,'activo'
+           ,'off')
 GO
