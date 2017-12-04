@@ -63,10 +63,8 @@ public partial class Libros_LibrosLista : System.Web.UI.Page
         {
             try
             {
-                //UsuarioBRL.eliminarUsuario(LibrosId);
-                //cargar();
-
-                //UsuarioPermisoBRL.eliminarUsuarioPermiso(LibrosId);
+                libroBRL.eliminarLibro(LibrosId);
+                cargar();                
 
             }
             catch (Exception ex)

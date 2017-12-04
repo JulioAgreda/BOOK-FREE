@@ -72,12 +72,10 @@ public class libroBRL
     {
         if (LibroId <= 0)
         {
-            throw new ArgumentException("El id del usuario no puede ser menor a 1");
+            throw new ArgumentException("El id del libro no puede ser menor a 1");
         }
-        string estado = "inactivo";
-
         LibrosDSTableAdapters.LibroTableAdapter adapter = new LibrosDSTableAdapters.LibroTableAdapter();
-        adapter.Delete(LibroId, estado);
+        adapter.Delete(LibroId);
     }
 
     public static Libros getLibroById(int libroId)
