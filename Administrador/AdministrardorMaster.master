@@ -29,7 +29,7 @@
                         <asp:HyperLink runat="server" 
                             CssClass="navbar-brand" 
                             style="padding-right: 80px;"
-                            NavigateUrl="~/Inicio.aspx">BOOK FREE
+                            NavigateUrl="~/Index.aspx">BOOK FREE
                         </asp:HyperLink>
                     </div>
 
@@ -57,7 +57,14 @@
                                 </asp:HyperLink>
                             </li>
                             
-                            <li style="padding-left:500px" id="menuSalir" runat="server">   
+                            <li id="menuPerfil" runat="server">                           
+                                <asp:HyperLink runat="server"
+                                    NavigateUrl="~/Administrador/Perfil.aspx"
+                                    Text="Perfil">
+                                </asp:HyperLink>
+                            </li>
+
+                            <li style="padding-left:300px" id="menuSalir" runat="server">   
                                 <asp:HyperLink  ID="LogoutButton"
                                     runat="server" 
                                     NavigateUrl="~/Administrador/AdminLogin.aspx"

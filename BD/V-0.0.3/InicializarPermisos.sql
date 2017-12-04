@@ -26,6 +26,14 @@ INSERT INTO [dbBiblioteca].[dbo].[tblPermiso]
            ([descripcion]
            ,[estado])
      VALUES
+           ('Gestionar Libros'
+           ,'activo')
+GO
+
+INSERT INTO [dbBiblioteca].[dbo].[tblPermiso]
+           ([descripcion]
+           ,[estado])
+     VALUES
            ('Revisar Reportes'
            ,'activo')
 GO

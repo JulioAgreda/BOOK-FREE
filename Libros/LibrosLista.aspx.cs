@@ -8,8 +8,30 @@ using System.Web.UI.WebControls;
 public partial class Libros_LibrosLista : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
-    {             
-        cargar();
+    {
+        int permisoId = 4;
+        try
+        {
+            if (Session["USUARIO"] == null)
+            {
+                Response.Redirect("~/Administrador/AdminLogin.aspx");
+            }
+            Usuario user = UsuarioBRL.getUsuariosActivos();
+            if (UsuarioPermisoBRL.tienePermiso(user.UsuarioId, permisoId))
+            {
+                cargar();
+            }
+            else
+            {
+                Response.Write("<script>window.alert('Usuario no Admitido!!!');</script>");
+                Response.Redirect("~/Administrador/AdminLogin.aspx");
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
     protected void GridLibros_RowCommand(object sender, GridViewCommandEventArgs e)
     {

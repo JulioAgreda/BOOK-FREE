@@ -77,6 +77,7 @@
                     <asp:ListItem>Ver lista de Usuarios</asp:ListItem>
                     <asp:ListItem>Eliminar Usuarios</asp:ListItem>
                     <asp:ListItem>Gestionar Administradores</asp:ListItem>
+                    <asp:ListItem>Gestionar Libros</asp:ListItem>
                     <asp:ListItem>Revisar Reportes</asp:ListItem>                    
                 </asp:CheckBoxList>
 

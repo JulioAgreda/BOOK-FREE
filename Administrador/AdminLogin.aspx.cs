@@ -9,7 +9,17 @@ public partial class Administrador_AdminLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["USUARIO"] = null;
+        
+        try
+        {
+            Usuario user = UsuarioBRL.getUsuariosActivos();
+            UsuarioBRL.actualizarEstadoUsuario("off", user.UsuarioId);
+            Session["USUARIO"] = null;
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 
     protected void BtnLogin_Click(object sender, EventArgs e)
@@ -34,6 +44,7 @@ public partial class Administrador_AdminLogin : System.Web.UI.Page
                 return;
             }
 
+            UsuarioBRL.actualizarEstadoUsuario("on", obj.UsuarioId);
             Session["USUARIO"] = obj;
         }
         catch (Exception ex)
@@ -42,7 +53,7 @@ public partial class Administrador_AdminLogin : System.Web.UI.Page
             MsgError.Visible = true;
             return;
         }
-        Response.Redirect("~/Administrador/AdminLista.aspx");
+        Response.Redirect("~/Administrador/Perfil.aspx");
 
     }
 }

@@ -9,14 +9,27 @@ public partial class Administrador_UsuarioLista : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["USUARIO"] == null)
+        int permisoId = 1;
+        try
         {
-            Response.Redirect("~/Administrador/AdminLogin.aspx");
-        }
+            if (Session["USUARIO"] == null)
+            {
+                Response.Redirect("~/Administrador/AdminLogin.aspx");
+            }
+            Usuario user = UsuarioBRL.getUsuariosActivos();
+            if (UsuarioPermisoBRL.tienePermiso(user.UsuarioId, permisoId))
+            {
+                cargarLista();
+            }
+            else
+            {                
+                Response.Redirect("~/Administrador/AdminLogin.aspx");
+            }
 
-        if (!IsPostBack)
+        }
+        catch (Exception ex)
         {
-            cargarLista();
+
         }
 
     }
