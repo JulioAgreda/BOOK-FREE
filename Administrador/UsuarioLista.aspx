@@ -14,16 +14,12 @@
                 AutoGenerateColumns =" false"
                 CssClass="table"                
                 GridLines="None">
-                <Columns>
-                    <asp:TemplateField HeaderText="Editar">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="btnEditar" runat="server"
-                                CommandName="Editar"
-                                CommandArgument='<%# Eval("usuarioId") %>'>
-                                <i class="glyphicon glyphicon-pencil"></i>
-                            </asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                <Columns>           
+
+                    <asp:BoundField DataField="UsuarioId" HeaderText="Codigo Usuario"/>
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre"/>
+                    <asp:BoundField DataField="Apellido" HeaderText="Apellido"/>
+                    <asp:BoundField DataField="Email" HeaderText="Correo Electronico"/>
 
                     <asp:TemplateField HeaderText="Eliminar">
                         <ItemTemplate>
@@ -36,9 +32,6 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:BoundField DataField="Nombre" HeaderText="Nombre"/>
-                    <asp:BoundField DataField="Apellido" HeaderText="Apellido"/>
-                    <asp:BoundField DataField="Email" HeaderText="Correo Electronico"/>
                 </Columns>
 
             </asp:GridView>

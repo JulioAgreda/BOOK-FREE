@@ -5,9 +5,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <br />
-    <h1 runat="server" id="title">LIBROS</h1><br />  
-
-    <asp:Repeater ID="ListLibros" runat="server" OnItemCommand="ListLibros_ItemCommand">
+    <h1 runat="server" id="title">LIBROS DESCARGADOS</h1><br />  
+         
+    <asp:Repeater ID="listaDescargados" runat="server" OnItemCommand="ListLibros_ItemCommand">
         <ItemTemplate>
             <asp:LinkButton ID="itemMostrarLibro" runat="server"
                 CommandName="verLibro"                
@@ -33,7 +33,7 @@
                         <tr>
                             <td>
                                 <asp:Label runat="server" Text='(' Font-Size="12px" ForeColor="#666666"></asp:Label>
-                                <asp:Label ID="lblValoracion" runat="server" Text='<%# Eval("Valoracion")%>' Font-Size="12px" ForeColor="#666666"></asp:Label>
+                                <%--<asp:Label ID="lblValoracion" runat="server" Text='<%# Eval("Valoracion")%>' Font-Size="12px" ForeColor="#666666"></asp:Label>--%>
                                 <asp:Label runat="server" Text='/10)' Font-Size="12px" ForeColor="#666666"></asp:Label><br />
                             </td>
                         </tr>

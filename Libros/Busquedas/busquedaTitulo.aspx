@@ -1,12 +1,39 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Interfaz.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Interfaz.master" AutoEventWireup="true" CodeFile="busquedaTitulo.aspx.cs" Inherits="Libros_Busquedas_busquedaTitulo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">      
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <br />
-    <h1 runat="server" id="title">LIBROS</h1><br />  
+    <div style="display:flex" id="subMenu">
+        <h1 runat="server"  style="margin-right:250px" id="title">BUSQUEDA POR TITULO</h1><br />  
 
+        <asp:RequiredFieldValidator runat="server"
+            ControlToValidate="txtBusqueda"
+            Display="Dynamic"
+            ForeColor="Red"
+            ErrorMessage="Debe ingresar su Titulo">
+        </asp:RequiredFieldValidator>
+        <asp:TextBox ID="txtBusqueda" runat="server"
+             CssClass="form-control" 
+             Width="250px"
+             style="margin-top:20px" 
+             placeholder="Ingrese el Titulo">
+        </asp:TextBox>
+        
+
+        <asp:LinkButton ID="btnBuscar" 
+            CssClass="btn-primary" 
+            style="border-radius:10px
+            ;margin-top:20px
+            ;text-align:center
+            ;font-size:20px" 
+            runat="server"
+            Height="35px"
+            Width="70px"
+            OnClick="btnBuscar_Click">Buscar            
+        </asp:LinkButton>
+    </div>
+    
     <asp:Repeater ID="ListLibros" runat="server" OnItemCommand="ListLibros_ItemCommand">
         <ItemTemplate>
             <asp:LinkButton ID="itemMostrarLibro" runat="server"

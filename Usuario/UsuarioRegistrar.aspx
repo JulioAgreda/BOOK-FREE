@@ -8,7 +8,6 @@
 
             <h1>REGISTRO DE USUARIO</h1>
             <br />
-            <br />
             <asp:HiddenField ID="UsuarioID" runat="server" Value="0" />
 
             <div class="col-md-6">
@@ -18,7 +17,7 @@
 
                 <div>
                     <label>Nombre:</label>
-                    <asp:TextBox ID="txtNombre" runat="server"
+                    <asp:TextBox ID="txtNombre" Width="200px" runat="server"
                         CssClass="form-control"
                         placeholder="Ingrese su Nombre">
                     </asp:TextBox>
@@ -31,8 +30,8 @@
                 </div>
 
                 <div>
-                    <label>Apellido:</label>
-                    <asp:TextBox ID="txtApellido" runat="server"
+                    <label style="padding-top:5px">Apellido:</label>
+                    <asp:TextBox ID="txtApellido" Width="200px" runat="server"
                         CssClass="form-control"
                         placeholder="Ingrese su Apellido">
                     </asp:TextBox>
@@ -45,8 +44,8 @@
                 </div>
 
                 <div runat="server" id="campoCorreo" visible="true">
-                    <label>Correo Electronico:</label>
-                    <asp:TextBox ID="txtEmail" runat="server"
+                    <label style="padding-top:5px">Correo Electronico:</label>
+                    <asp:TextBox ID="txtEmail" Width="350px" runat="server"
                         CssClass="form-control"
                         placeholder="Ingrese su Correo">
                     </asp:TextBox>
@@ -59,11 +58,11 @@
                 </div>
 
                 <div runat="server" id="CampoContraseña" visible="true">
-                    <label>Constraseña:</label>
-                    <asp:TextBox ID="txtContraseña" runat="server"
+                    <label style="padding-top:5px">Constraseña:</label>
+                    <asp:TextBox ID="txtContraseña" Width="180px" runat="server"
                         TextMode="Password"
                         CssClass="form-control"
-                        placeholder="Ingrese su Constraseña">
+                        placeholder="Constraseña">
                     </asp:TextBox>
                 </div>
                 <br />

@@ -5,21 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Index : System.Web.UI.Page
+public partial class Libros_Busquedas_busquedaAutor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            cargarLibros();
+            //cargarLibros();
         }
     }
+
     public void cargarLibros()
     {
+        string nombreAutor = txtBusqueda.Text;
         List<Libros> listLibros = libroBRL.getLibros();
         ListLibros.DataSource = listLibros;
-        ListLibros.DataBind();     
+        ListLibros.DataBind();
     }
+
     protected void ListLibros_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         int libroId = 0;
@@ -41,5 +44,11 @@ public partial class Index : System.Web.UI.Page
         }
     }
 
-
+    protected void btnBuscar_Click(object sender, EventArgs e)
+    {
+        string nombreAutor = txtBusqueda.Text;
+        List<Libros> listLibros = libroBRL.getLibrosByAutor(nombreAutor);
+        ListLibros.DataSource = listLibros;
+        ListLibros.DataBind();
+    }
 }

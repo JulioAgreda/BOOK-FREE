@@ -79,5 +79,5 @@ public class AutorBRL
         obj.estado = row.estado;
         
         return obj;
-    }
+    }        
 }

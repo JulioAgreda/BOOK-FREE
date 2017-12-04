@@ -14,7 +14,6 @@ public class Libros
     public string Titulo { get; set; }
     public string Portada { get; set; }
     public string Sinopsis { get; set; }
-    public int Valoracion { get; set; }
     public string Estado { get; set; }
 
     public Libros()

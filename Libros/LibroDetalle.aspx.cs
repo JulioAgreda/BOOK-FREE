@@ -17,8 +17,9 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
         try
         {
             //Ocultar Valorar
-            lblValoreLibro.Visible = false;
-            valoreLibro.Visible = false;
+            
+            //lblValoreLibro.Visible = false;
+            //valoreLibro.Visible = false;
 
             
 
@@ -37,7 +38,7 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
             Categorias categoria = CategoriaBRL.getCategoriaNombreById(codLibro);
             lblCategoria.Text = categoria.Nombre;
 
-            lblValoracion.Text = ""+ Libro.Valoracion;
+            //lblValoracion.Text = ""+ Libro.Valoracion;
 
             PSinopsis.InnerText = Libro.Sinopsis;
             
@@ -48,10 +49,10 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
         }
     }
 
-    protected void ComboListaValoracion_DataBound(object sender, EventArgs e)
-    {
-        comboValoracion.Items.Insert(0, new ListItem("0", ""));
-    }
+    //protected void ComboListaValoracion_DataBound(object sender, EventArgs e)
+    //{
+    //    comboValoracion.Items.Insert(0, new ListItem("0", ""));
+    //}
 
 
     protected void Descargar_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
         {
             if (Session["USUARIO"] == null)
             {
-                Response.Redirect("~/Usuario/UsuarioLogin.aspx");
+                Response.Redirect("~/Usuario/LoginUsuario.aspx");
             }
 
             string strId = Request.Params["Id"];
@@ -96,7 +97,7 @@ public partial class Libros_LibroDetalle : System.Web.UI.Page
         {
             if (Session["USUARIO"] == null)
             {
-                Response.Redirect("~/Usuario/UsuarioLogin.aspx");
+                Response.Redirect("~/Usuario/LoginUsuario.aspx");
             }
 
             string strId = Request.Params["Id"];

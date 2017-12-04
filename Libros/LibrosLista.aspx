@@ -44,7 +44,7 @@
                    <asp:BoundField DataField="titulo" HeaderText="Titulo" />  
                    <asp:ImageField DataImageUrlField="Portada" HeaderText="portada" ControlStyle-Width="60px"></asp:ImageField>               
                    <asp:BoundField DataField="sinopsis" HeaderText="Sinapsis" />   
-                   <asp:BoundField DataField="valoracion" HeaderText="Valoracion" />    
+                   <%--<asp:BoundField DataField="valoracion" HeaderText="Valoracion" />--%>    
                 </Columns> 
              </asp:GridView>                   
                             

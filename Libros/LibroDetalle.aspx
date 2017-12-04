@@ -31,7 +31,7 @@
                     <label runat="server">/10)</label>
                     
                 <br />
-                <asp:Label id="lblValoreLibro" runat="server" style="padding-left:20px" Text="Valore:"></asp:Label>
+                <%--<asp:Label id="lblValoreLibro" runat="server" style="padding-left:20px" Text="Valore:"></asp:Label>
                 <div runat="server" style="padding-left: 20px; display:flex" id="valoreLibro">
                     <asp:DropDownList ID="comboValoracion" runat="server"
                         Style="padding-left: 10px; width: 110px; height: 35px"
@@ -48,8 +48,8 @@
                         <asp:ListItem Value="8"></asp:ListItem>
                         <asp:ListItem Value="9"></asp:ListItem>
                         <asp:ListItem Value="10"></asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:Button Class="btn btn-dark btn-block" style="width: 60px; margin-left:5px;" ID="btnValorar" runat="server" Text="Ok" />
+                    </asp:DropDownList>--%>
+                    <%--<asp:Button Class="btn btn-dark btn-block" style="width: 60px; margin-left:5px;" ID="btnValorar" runat="server" Text="Ok" />--%>
 
                 </div>
                 <br />

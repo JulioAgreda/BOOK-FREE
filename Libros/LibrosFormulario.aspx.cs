@@ -50,7 +50,6 @@ public partial class Libros_LibrosFormulario : System.Web.UI.Page
             objLibro.Titulo = tiutlo;
             objLibro.Portada = imgPortada;            
             objLibro.Sinopsis = sinopsis;
-            objLibro.Valoracion = 0;
             objLibro.Estado = "activo";
 
             libroBRL.insertarlibros(objLibro);
