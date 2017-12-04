@@ -5,22 +5,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <br />
     <div style="display:flex" id="subMenu">
-        <h1 runat="server"  style="margin-right:250px" id="title">BUSQUEDA POR TITULO</h1><br />  
+        <h1 runat="server"  style="margin-right:250px" id="title">BUSQUEDA POR AUTOR</h1><br />  
 
-        <asp:RequiredFieldValidator runat="server"
+        <%--<asp:RequiredFieldValidator runat="server"
             ControlToValidate="txtBusqueda"
             Display="Dynamic"
             ForeColor="Red"
             ErrorMessage="Debe ingresar su Titulo">
-        </asp:RequiredFieldValidator>
+        </asp:RequiredFieldValidator>--%>
         <asp:TextBox ID="txtBusqueda" runat="server"
              CssClass="form-control" 
              Width="250px"
              style="margin-top:20px" 
-             placeholder="Ingrese el Titulo">
+             placeholder="Ingrese el Autor">
         </asp:TextBox>
         
-
         <asp:LinkButton ID="btnBuscar" 
             CssClass="btn-primary" 
             style="border-radius:10px

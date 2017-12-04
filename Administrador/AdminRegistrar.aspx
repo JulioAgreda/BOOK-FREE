@@ -74,19 +74,10 @@
                 <h3 class="checkbox">Asignar Permisos</h3>
                     
                 <asp:CheckBoxList CssClass="checkbox-inline" ID="checkPermisos" runat="server">
-                    <asp:ListItem>Gestionar Usuarios</asp:ListItem>
-                    <asp:ListItem>Gestionar Autores</asp:ListItem>
-                    <asp:ListItem>Gestionar Editoriales</asp:ListItem>
-                    <asp:ListItem>Gestionar Libros</asp:ListItem>
-                    <asp:ListItem>Gestionar Categorias</asp:ListItem>
-                    <asp:ListItem>Gestionar Permisos</asp:ListItem>
-                    <asp:ListItem>Reportes Descargas</asp:ListItem>
-                    <asp:ListItem>Reportes Lecturas</asp:ListItem>
-                    <asp:ListItem>Reportes Valoracion</asp:ListItem>
-                    <asp:ListItem>Ver Lista Libros</asp:ListItem>
-                    <asp:ListItem>Descargar Libros</asp:ListItem>
-                    <asp:ListItem>Leer Libros</asp:ListItem>
-                    <asp:ListItem>Valorar Libro</asp:ListItem>
+                    <asp:ListItem>Ver lista de Usuarios</asp:ListItem>
+                    <asp:ListItem>Eliminar Usuarios</asp:ListItem>
+                    <asp:ListItem>Gestionar Administradores</asp:ListItem>
+                    <asp:ListItem>Revisar Reportes</asp:ListItem>                    
                 </asp:CheckBoxList>
 
                 <br />

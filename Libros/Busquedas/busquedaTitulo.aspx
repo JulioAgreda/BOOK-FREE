@@ -7,12 +7,12 @@
     <div style="display:flex" id="subMenu">
         <h1 runat="server"  style="margin-right:250px" id="title">BUSQUEDA POR TITULO</h1><br />  
 
-        <asp:RequiredFieldValidator runat="server"
+<%--        <asp:RequiredFieldValidator runat="server"
             ControlToValidate="txtBusqueda"
             Display="Dynamic"
             ForeColor="Red"
             ErrorMessage="Debe ingresar su Titulo">
-        </asp:RequiredFieldValidator>
+        </asp:RequiredFieldValidator>--%>
         <asp:TextBox ID="txtBusqueda" runat="server"
              CssClass="form-control" 
              Width="250px"

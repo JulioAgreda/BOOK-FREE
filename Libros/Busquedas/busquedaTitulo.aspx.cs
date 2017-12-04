@@ -47,6 +47,9 @@ public partial class Libros_Busquedas_busquedaTitulo : System.Web.UI.Page
 
     protected void btnBuscar_Click(object sender, EventArgs e)
     {
-
+        string nombreAutor = txtBusqueda.Text;
+        List<Libros> listLibros = libroBRL.getLibrosByAutor(nombreAutor);
+        ListLibros.DataSource = listLibros;
+        ListLibros.DataBind();
     }
 }

@@ -42,7 +42,7 @@
             </li>             
             <li class="menu_Busqueda" id="Li1" runat="server">
                 <asp:HyperLink class="nav-link" runat="server"
-                    NavigateUrl="~/Libros/Busquedas.aspx"
+                    NavigateUrl="~/Libros/Busquedas/busquedaAutor.aspx"
                     Text="Busquedas" Font-Size="17px">
                 </asp:HyperLink>
             </li> 
